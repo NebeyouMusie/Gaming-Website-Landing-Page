@@ -12,7 +12,7 @@ const Index = () => {
   const gameImages = [
     "https://images.pexels.com/photos/1038916/pexels-photo-1038916.jpeg",
     "https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg",
-    "https://images.pexels.com/photos/3328540/pexels-photo-3328540.jpeg",
+    "https://images.pexels.com/photos/1293261/pexels-photo-1293261.jpeg?auto=compress&cs=tinysrgb&w=600",
     "https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg",
     "https://images.pexels.com/photos/777001/pexels-photo-777001.jpeg",
     "https://images.pexels.com/photos/4792731/pexels-photo-4792731.jpeg",
@@ -116,8 +116,12 @@ const Index = () => {
           <h2 className="text-4xl mb-8">LATEST GAMES</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {gameImages.map((image, index) => (
-              <div key={index} className="game-card">
-                <img src={image} alt={`Game ${index + 1}`} className="w-full h-48 object-cover" />
+              <div key={index} className="game-card aspect-[4/3]">
+                <img 
+                  src={image} 
+                  alt={`Game ${index + 1}`} 
+                  className="w-full h-full object-cover"
+                />
                 <div className="game-card-overlay p-4">
                   <h3 className="text-lg">Game Title {index + 1}</h3>
                 </div>
