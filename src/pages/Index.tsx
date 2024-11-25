@@ -8,6 +8,18 @@ const Index = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // Array of game images for the latest games section
+  const gameImages = [
+    "https://images.pexels.com/photos/1038916/pexels-photo-1038916.jpeg",
+    "https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg",
+    "https://images.pexels.com/photos/3328540/pexels-photo-3328540.jpeg",
+    "https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg",
+    "https://images.pexels.com/photos/777001/pexels-photo-777001.jpeg",
+    "https://images.pexels.com/photos/4792731/pexels-photo-4792731.jpeg",
+    "https://images.pexels.com/photos/1933900/pexels-photo-1933900.jpeg",
+    "https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg"
+  ];
+
   return (
     <div className="min-h-screen bg-gaming-dark">
       {/* Navbar */}
@@ -69,7 +81,7 @@ const Index = () => {
             </div>
             <div className="relative">
               <div className="absolute inset-0 bg-gaming-accent/20 rounded-full filter blur-3xl animate-glow"></div>
-              <img src="https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg" alt="Gaming Portal" className="relative z-10 rounded-lg" />
+              <img src="https://images.pexels.com/photos/572665/pexels-photo-572665.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Gaming Portal" className="relative z-10 rounded-lg" />
             </div>
           </div>
         </div>
@@ -103,11 +115,11 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <h2 className="text-4xl mb-8">LATEST GAMES</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((index) => (
+            {gameImages.map((image, index) => (
               <div key={index} className="game-card">
-                <img src={`https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&w=500`} alt={`Game ${index}`} />
+                <img src={image} alt={`Game ${index + 1}`} className="w-full h-48 object-cover" />
                 <div className="game-card-overlay p-4">
-                  <h3 className="text-lg">Game Title {index}</h3>
+                  <h3 className="text-lg">Game Title {index + 1}</h3>
                 </div>
               </div>
             ))}
@@ -126,13 +138,13 @@ const Index = () => {
             <p className="text-gray-400 mb-6">
               Get the latest updates and news about your favorite games!
             </p>
-            <div className="flex max-w-md mx-auto">
+            <div className="flex flex-col sm:flex-row max-w-md mx-auto gap-4">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-2 rounded-l bg-gaming-dark border border-gaming-accent/50 focus:outline-none focus:border-gaming-accent"
+                className="flex-1 px-4 py-2 rounded bg-gaming-dark border border-gaming-accent/50 focus:outline-none focus:border-gaming-accent"
               />
-              <button className="btn-primary rounded-l-none">Subscribe</button>
+              <button className="btn-primary whitespace-nowrap">Subscribe</button>
             </div>
           </div>
         </div>
